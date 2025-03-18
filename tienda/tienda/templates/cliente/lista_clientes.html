@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Mi Tienda</title>
+    </head>
+    <body>
+        
+        {% for cliente in clientes_mostrar %}
+        <ul>
+            <li>{{cliente.nombre}}</li>
+
+            <li>{{cliente.apellidos}}</li>
+
+            <li>{{cliente.usuario}}</li>
+        </ul>
+        {% endfor %} 
+        
+    </body>
+</html>

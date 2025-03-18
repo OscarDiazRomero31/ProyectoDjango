@@ -1,2 +1,2 @@
 # ProyectoDjango
-Proyecto Servidor
+Proyecto Servidor Tercer Trimestre

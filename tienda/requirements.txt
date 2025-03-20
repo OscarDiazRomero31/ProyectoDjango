@@ -2,3 +2,7 @@ Django~=5.1.1
 
 #Django debuj
 django-debug-toolbar~=4.4.6
+
+#Bootstrap
+django-bootstrap5~=24.3
+django-bootstrap-icons~=0.8.6

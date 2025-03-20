@@ -1,18 +1,11 @@
-<html>
-    <head>
-        <title>Mi Tienda</title>
-    </head>
-    <body>
-        
+{% extends 'estructura/principal.html' %}
+
+    {% block contenido %}
+
         {% for cliente in clientes_mostrar %}
-        <ul>
-            <li>{{cliente.nombre}}</li>
-
-            <li>{{cliente.apellidos}}</li>
-
-            <li>{{cliente.usuario}}</li>
-        </ul>
+        {% include 'cliente/cliente.html' %}
+        {% empty %}
+            <h1>No hay clientes para mostrar</h1>
         {% endfor %} 
-        
-    </body>
-</html>
+
+    {% endblock %}

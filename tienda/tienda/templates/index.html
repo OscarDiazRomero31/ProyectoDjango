@@ -1,10 +1,26 @@
 {% extends 'estructura/principal.html' %}
+
 {% block titulo %}
-    <title>Esta es mi pagina de inicio</title>
+    <title>Esta es mi página de inicio</title>
 {% endblock %}
 
 {% block contenido %}
-
-<h2>ESTE ES LA PAGINA DE INICIO</h2>
-
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header text-center bg-primary text-white">
+                        <h3>Bienvenido a la Página de Inicio</h3>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="text-center">ESTE ES LA PÁGINA DE INICIO</h2>
+                        <p class="text-center">Aquí puedes ver el contenido más importante de la aplicación.</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <p>Gracias por visitar nuestra página de inicio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

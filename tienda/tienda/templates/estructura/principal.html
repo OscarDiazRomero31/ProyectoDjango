@@ -10,17 +10,22 @@
 
     {% load django_bootstrap5 %}
     {% bootstrap_css %}
-
 </head>
 <body>
 
-    {% include 'estructura/menu.html' %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        {% include 'estructura/menu.html' %}
+    </nav>
 
-    <h1>ESTA ES MI TIENDA ONLINE</h1>
-    {% block contenido %}
-    {% endblock %}
+    <div class="container mt-4">
+        <h1 class="text-center">ESTA ES MI TIENDA ONLINE</h1>
+        {% block contenido %}
+        {% endblock %}
+    </div>
 
-    {% include 'estructura/pie.html' %}
+    <footer class="bg-dark text-white py-4 mt-4">
+        {% include 'estructura/pie.html' %}
+    </footer>
 
     {% bootstrap_javascript %}
 

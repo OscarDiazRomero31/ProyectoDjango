@@ -1,15 +1,30 @@
-<ul>
-    <li>{{cliente.nombre|upper}}</li> 
-
-    <li>{{cliente.apellidos}}</li> 
-
-    <li>{{cliente.usuario}}</li>
+<div class="container mt-4">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <strong>Nombre:</strong> {{ cliente.nombre|upper }}
+        </li>
+        <li class="list-group-item">
+            <strong>Apellidos:</strong> {{ cliente.apellidos }}
+        </li>
+        <li class="list-group-item">
+            <strong>Usuario:</strong> {{ cliente.usuario }}
+        </li>
+    </ul>
 
     {% if cliente.id == 1 %}
-        <h2>Es el primer cliente</h2>
+        <div class="alert alert-success mt-3">
+            <h4 class="alert-heading">¡Felicidades!</h4>
+            <p>Este es el primer cliente.</p>
+        </div>
     {% elif cliente.id == 2 %}
-        <h2>Es el segundo cliente</h2>
+        <div class="alert alert-info mt-3">
+            <h4 class="alert-heading">¡Bienvenido!</h4>
+            <p>Este es el segundo cliente.</p>
+        </div>
     {% else %}
-        <h2>No es ni el primer ni el segundo cliente</h2>
+        <div class="alert alert-warning mt-3">
+            <h4 class="alert-heading">Atención</h4>
+            <p>No es ni el primer ni el segundo cliente.</p>
+        </div>
     {% endif %}
-</ul>
+</div>

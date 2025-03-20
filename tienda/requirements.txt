@@ -1,1 +1,4 @@
 Django~=5.1.1
+
+#Django debuj
+django-debug-toolbar~=4.4.6

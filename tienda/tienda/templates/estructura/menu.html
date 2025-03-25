@@ -1,27 +1,51 @@
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'inicio' %}">Tienda</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'inicio' %}">Tienda</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'lista_clientes' %}">Ver Clientes</a>
+        </li>
+        <li>
+          <p>Fecha Inicio: 
+            <br>{{ request.session.fecha_inicio }}</br>
+          </p>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+      
+      <!-- Lógica para mostrar los enlaces según la autenticación del usuario -->
+      <ul>
+        {% if request.user.is_authenticated %}
+          <!-- Si el usuario está autenticado -->
+          <li>
+            <a class="btn btn-outline-warning" href="{% url 'logout' %}">
+              Desconectarse
+            </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'lista_clientes' %}">Ver Clientes</a>
+        {% else %}
+          <!-- Si el usuario no está autenticado -->
+          <li>
+            <a class="btn btn-outline-warning" href="{% url 'login' %}">
+              Login
+            </a>
           </li>
           <li>
-            <p>Fecha Inicio: 
-              <br>{{ request.session.fecha_inicio }}</br>
-            </p>
+            <a class="btn btn-outline-warning" href="{% url 'registrar_usuario' %}">
+              Registrarse
+            </a>
           </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Buscar</button>
-        </form>
-      </div>
+        {% endif %}
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>

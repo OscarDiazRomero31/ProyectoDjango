@@ -12,6 +12,11 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'lista_clientes' %}">Ver Clientes</a>
           </li>
+          <li>
+            <p>Fecha Inicio: 
+              <br>{{ request.session.fecha_inicio }}</br>
+            </p>
+          </li>
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">

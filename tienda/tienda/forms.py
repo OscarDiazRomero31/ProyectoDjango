@@ -12,4 +12,4 @@ class RegistroForm(UserCreationForm): #Mismo nombre que en views.py
     
     class Meta:
         model = Usuario
-        fields = ('username', 'email', 'password', 'password2', 'rol')
+        fields = ('username', 'email', 'password1', 'password2', 'rol')

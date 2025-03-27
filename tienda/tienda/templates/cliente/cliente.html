@@ -1,13 +1,13 @@
 <div class="container mt-4">
     <ul class="list-group">
         <li class="list-group-item">
-            <strong>Nombre:</strong> {{ cliente.nombre }}
+            <strong>Nombre:</strong> {{ cliente.usuario.first_name }}
         </li>
         <li class="list-group-item">
-            <strong>Apellidos:</strong> {{ cliente.apellidos }}
+            <strong>Apellidos:</strong> {{ cliente.usuario.last_name }}
         </li>
         <li class="list-group-item">
-            <strong>Usuario:</strong> {{ cliente.usuario }}
+            <strong>Usuario:</strong> {{ cliente.usuario.username }}
         </li>
     </ul>
 

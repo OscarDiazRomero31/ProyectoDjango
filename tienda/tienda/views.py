@@ -3,6 +3,7 @@ from .models import *
 from datetime import datetime
 from .forms import *
 from django.contrib.auth import login
+from django.contrib.auth.models import Group
 
 # Create your views here.
 def index(request):
@@ -21,22 +22,14 @@ def registrar_usuario(request):
     if request.method == 'POST':
         formulario = RegistroForm(request.POST)
         if formulario.is_valid():
-            # Obtención de los datos del formulario
             user = formulario.save()
             rol = int(formulario.cleaned_data.get('rol'))
-
-            # Crear usuario y asignar rol
-            if rol == Usuario.CLIENTE:
-                cliente = Cliente.objects.create(usuario=user)
+            if(rol == Usuario.CLIENTE):
+                grupo = Group.objects.get(name= 'clientes')
+                grupo.user_set.add(user)
+                cliente = Cliente.objects.create(usuario = user)
                 cliente.save()
-            elif rol == Usuario.VENDEDOR:
-                bibliotecario = Vendedor.objects.create(usuario=user)
-                bibliotecario.save()
-
-            # Iniciar sesión del usuario
-            login(request, user)
-            return redirect('index')
+            return redirect('inicio')
     else:
         formulario = RegistroForm()
-
     return render(request, 'registration/signup.html', {'formulario': formulario})

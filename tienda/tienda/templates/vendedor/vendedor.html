@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <strong>Nombre:</strong> {{ vendedor.usuario.first_name }}
+        </li>
+        <li class="list-group-item">
+            <strong>Apellidos:</strong> {{ vendedor.usuario.last_name }}
+        </li>
+        <li class="list-group-item">
+            <strong>Usuario:</strong> {{ vendedor.usuario.username }}
+        </li>
+    </ul>
+
+    {% if vendedor.id == 1 %}
+        <div class="alert alert-success mt-3">
+            <h4 class="alert-heading">¡Felicidades!</h4>
+            <p>Este es el primer vendedor.</p>
+        </div>
+    {% elif vendedor.id == 2 %}
+        <div class="alert alert-info mt-3">
+            <h4 class="alert-heading">¡Bienvenido!</h4>
+            <p>Este es el segundo vendedor.</p>
+        </div>
+    {% else %}
+        <div class="alert alert-warning mt-3">
+            <h4 class="alert-heading">Atención</h4>
+            <p>No es ni el primer ni el segundo vendedor.</p>
+        </div>
+    {% endif %}
+</div>

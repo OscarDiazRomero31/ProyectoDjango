@@ -18,6 +18,10 @@ def lista_clientes(request):
     #clientes = None //nos mostraria en el template el mensaje de no hay clientes.
     return render(request,'cliente/lista_clientes.html', {'clientes_mostrar': clientes})
 
+def lista_vendedores(request):
+    vendedores = Vendedor.objects.all()
+    return render(request,'vendedor/lista_vendedores.html',{'vendedores_mostrar': vendedores})
+
 def registrar_usuario(request):
     if request.method == 'POST':
         formulario = RegistroForm(request.POST)
@@ -29,6 +33,13 @@ def registrar_usuario(request):
                 grupo.user_set.add(user)
                 cliente = Cliente.objects.create(usuario = user)
                 cliente.save()
+            elif(rol == Usuario.VENDEDOR):
+                grupo = Group.objects.get(name='vendedores') 
+                grupo.user_set.add(user)
+                vendedor = Vendedor.objects.create(usuario = user)
+                vendedor.save()
+            
+            login(request, user)
             return redirect('inicio')
     else:
         formulario = RegistroForm()

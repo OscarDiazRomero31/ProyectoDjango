@@ -29,4 +29,9 @@ class Vendedor (models.Model):
     
     def __str__(self):
         return self.usuario.username
-
+    
+class Producto (models.Model):
+    nombre = models.CharField(max_length=100)
+    precio = models.FloatField(default=0)
+    tipoFruta = models.CharField(max_length=100)
+    

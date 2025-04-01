@@ -131,6 +131,6 @@ INTERNAL_IPS = ["127.0.0.1"]
 
 AUTH_USER_MODEL = 'tienda.Usuario'
 
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'inicio'
 
-LOGOUT_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'inicio'

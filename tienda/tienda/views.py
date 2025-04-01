@@ -4,6 +4,7 @@ from datetime import datetime
 from .forms import *
 from django.contrib.auth import login
 from django.contrib.auth.models import Group
+from django.contrib.auth.decorators import permission_required
 
 # Create your views here.
 def index(request):
@@ -13,11 +14,13 @@ def index(request):
         
     return render(request, 'index.html', {})
 
+@permission_required('tienda.view_cliente')
 def lista_clientes(request):
     clientes = Cliente.objects.all()
     #clientes = None //nos mostraria en el template el mensaje de no hay clientes.
     return render(request,'cliente/lista_clientes.html', {'clientes_mostrar': clientes})
 
+@permission_required('tienda.view_vendedor')
 def lista_vendedores(request):
     vendedores = Vendedor.objects.all()
     return render(request,'vendedor/lista_vendedores.html',{'vendedores_mostrar': vendedores})
@@ -44,3 +47,5 @@ def registrar_usuario(request):
     else:
         formulario = RegistroForm()
     return render(request, 'registration/signup.html', {'formulario': formulario})
+
+

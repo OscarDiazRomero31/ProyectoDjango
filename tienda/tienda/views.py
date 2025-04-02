@@ -25,6 +25,10 @@ def lista_vendedores(request):
     vendedores = Vendedor.objects.all()
     return render(request,'vendedor/lista_vendedores.html',{'vendedores_mostrar': vendedores})
 
+def lista_productos(request):
+    productos = Producto.objects.all()
+    return render(request,'producto/lista_productos.html',{'productos_mostrar': productos})
+
 def registrar_usuario(request):
     if request.method == 'POST':
         formulario = RegistroForm(request.POST)

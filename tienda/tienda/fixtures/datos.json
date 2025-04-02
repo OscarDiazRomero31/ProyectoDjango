@@ -117,6 +117,84 @@
     }
 },
 {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2025-04-02T23:14:37.189",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "1",
+        "object_repr": "Producto object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2025-04-02T23:14:50.369",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "1",
+        "object_repr": "Producto object (1)",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2025-04-02T23:15:14.155",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "2",
+        "object_repr": "Producto object (2)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2025-04-02T23:57:01.320",
+        "user": 1,
+        "content_type": 3,
+        "object_id": "1",
+        "object_repr": "clientes",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2025-04-02T23:59:13.532",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "oscar",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2025-04-02T23:59:27.760",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "4",
+        "object_repr": "oscarvendedor",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+    }
+},
+{
     "model": "auth.permission",
     "pk": 1,
     "fields": {
@@ -445,7 +523,12 @@
     "pk": 1,
     "fields": {
         "name": "clientes",
-        "permissions": []
+        "permissions": [
+            21,
+            22,
+            23,
+            24
+        ]
     }
 },
 {
@@ -542,11 +625,19 @@
     }
 },
 {
+    "model": "sessions.session",
+    "pk": "w2g893c08l6f44ryom1cb62vn8ko6or9",
+    "fields": {
+        "session_data": "eyJmZWNoYV9pbmljaW8iOiIwMi8wNC8yMDI1IDIzOjU5In0:1u067e:TrL5nS305ZyWHY_1UV1dTenU7iSk2Oi-q6LWPdXVrpg",
+        "expire_date": "2025-04-16T23:59:46.694"
+    }
+},
+{
     "model": "tienda.usuario",
     "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$870000$HOAlXUI2w9dl4baLNFEXsX$y9pqsxMKQZhRiBt1nmCp7RPoehOSXqyNd2kk9jPYV0Y=",
-        "last_login": "2025-04-02T09:15:19.469",
+        "last_login": "2025-04-02T23:58:48.811",
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
@@ -565,15 +656,15 @@
     "pk": 3,
     "fields": {
         "password": "pbkdf2_sha256$870000$7w56CS2gVnu7oHrG7A2GcM$z+HlWC9KKFMQ0WmMroY56j1XIeQnjBbVGlD0OBllJmU=",
-        "last_login": "2025-04-02T09:16:06.219",
+        "last_login": "2025-04-02T23:57:34",
         "is_superuser": false,
         "username": "oscar",
-        "first_name": "",
-        "last_name": "",
+        "first_name": "Oscar",
+        "last_name": "Diaz Romero",
         "email": "oscar@gmail.com",
         "is_staff": false,
         "is_active": true,
-        "date_joined": "2025-04-01T18:48:42.521",
+        "date_joined": "2025-04-01T18:48:42",
         "rol": 2,
         "groups": [
             1
@@ -586,15 +677,15 @@
     "pk": 4,
     "fields": {
         "password": "pbkdf2_sha256$870000$8ZltHzfd41SLirCoB6guEQ$hx7COAPYnuwZVYXNyRmCe07C+PVI7MIt4EjTV4cMobE=",
-        "last_login": "2025-04-02T09:15:46.790",
+        "last_login": "2025-04-02T23:58:18",
         "is_superuser": false,
         "username": "oscarvendedor",
-        "first_name": "",
-        "last_name": "",
+        "first_name": "Oscar",
+        "last_name": "Diaz Romero",
         "email": "oscarvendedor@gmail.com",
         "is_staff": false,
         "is_active": true,
-        "date_joined": "2025-04-01T18:49:14.917",
+        "date_joined": "2025-04-01T18:49:14",
         "rol": 3,
         "groups": [
             2
@@ -614,6 +705,24 @@
     "pk": 1,
     "fields": {
         "usuario": 4
+    }
+},
+{
+    "model": "tienda.producto",
+    "pk": 1,
+    "fields": {
+        "nombre": "Naranja",
+        "precio": 1.0,
+        "tipoFruta": "Acidas"
+    }
+},
+{
+    "model": "tienda.producto",
+    "pk": 2,
+    "fields": {
+        "nombre": "Limon",
+        "precio": 1.0,
+        "tipoFruta": "Acidas"
     }
 }
 ]

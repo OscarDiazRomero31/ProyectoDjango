@@ -32,6 +32,6 @@ class Vendedor (models.Model):
     
 class Producto (models.Model):
     nombre = models.CharField(max_length=100)
-    precio = models.FloatField(default=0)
+    precio = models.FloatField()
     tipoFruta = models.CharField(max_length=100)
     

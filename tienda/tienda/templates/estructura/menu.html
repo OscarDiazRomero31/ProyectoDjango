@@ -25,6 +25,13 @@
           {% endif %}
         </li>
         <li>
+          {% if user.rol == 3 %}
+        <a class="btn btn-outline-warning" href="{% url 'crear_productos' %}">
+          Crear Productos
+        </a>
+        {% endif %}
+        </li>
+        <li>
           <p>Fecha Inicio: 
             <br>{{ request.session.fecha_inicio }}</br>
           </p>
@@ -67,10 +74,11 @@
 
         {% if request.user.is_authenticated %}
         <form action="{% url 'logout' %}" method="POST">
-        {% csrf_token %}
-        <button class="btn btn-outline-warning" type="submit">
-          Desconectarse
-        {% endif %}
+          {% csrf_token %}
+          <button class="btn btn-outline-warning" type="submit">
+            Desconectarse
+          </form>
+          {% endif %}
       </ul>
     </div>
   </div>

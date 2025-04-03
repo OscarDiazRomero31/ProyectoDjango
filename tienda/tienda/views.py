@@ -25,9 +25,22 @@ def lista_vendedores(request):
     vendedores = Vendedor.objects.all()
     return render(request,'vendedor/lista_vendedores.html',{'vendedores_mostrar': vendedores})
 
+@permission_required('tienda.view_productos')
 def lista_productos(request):
     productos = Producto.objects.all()
     return render(request,'producto/lista_productos.html',{'productos_mostrar': productos})
+
+@permission_required('tienda.add_productos')
+def crear_productos(request):
+    if request.method == "POST":
+        formulario = ProductoModelForm(request.POST)
+        if formulario.is_valid():
+            print("Es valido")
+            formulario.save()
+            return redirect('lista_productos')
+    else:
+        formulario = ProductoModelForm()
+    return render(request,'formularioProducto/crear_productos.html',{'crear_productos': formulario})
 
 def registrar_usuario(request):
     if request.method == 'POST':

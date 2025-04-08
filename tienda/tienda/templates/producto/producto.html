@@ -9,5 +9,15 @@
         <li class="list-group-item">
             <strong>Tipo de Fruta:</strong> {{ producto.tipoFruta }}
         </li>
+        {% load bootstrap_icons %}
+        <div class="row btn-group">
+            <div class="mb-2">
+                <button type="button" 
+                        class="btn btn-outline-primary"> 
+                        <a href="{% url 'editar_producto' producto.id %}" ><span>{% bs_icon 'pencil' %}</span></a>
+                </button>
+
+            </div>
+        </div>
     </ul>
 </div>

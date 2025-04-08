@@ -38,6 +38,6 @@ class Producto (models.Model):
 class Tienda (models.Model):
     nombre = models.CharField(max_length=100)
     direccion = models.CharField(max_length=100)
-    telefono = models.IntegerField(max_length=100)
+    telefono = models.IntegerField()
     
     

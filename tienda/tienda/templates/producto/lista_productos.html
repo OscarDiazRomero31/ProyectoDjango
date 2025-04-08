@@ -4,6 +4,8 @@
 
         {% for producto in productos_mostrar %}
         {% include 'producto/producto.html' %}
+        <a class="btn btn-outline-primry"
+        href="{% url 'dame_producto' producto.id %}">Mas Informacion </a>
         {% empty %}
             <h1>No hay productos para mostrar</h1>
         {% endfor %} 

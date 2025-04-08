@@ -3,7 +3,7 @@
     "model": "admin.logentry",
     "pk": 1,
     "fields": {
-        "action_time": "2025-04-01T18:47:17.114",
+        "action_time": "2025-04-08T09:56:25.581",
         "user": 1,
         "content_type": 3,
         "object_id": "1",
@@ -16,7 +16,7 @@
     "model": "admin.logentry",
     "pk": 2,
     "fields": {
-        "action_time": "2025-04-01T18:47:26.430",
+        "action_time": "2025-04-08T09:56:32.970",
         "user": 1,
         "content_type": 3,
         "object_id": "2",
@@ -29,182 +29,26 @@
     "model": "admin.logentry",
     "pk": 3,
     "fields": {
-        "action_time": "2025-04-01T18:47:47.332",
+        "action_time": "2025-04-08T09:58:30.024",
         "user": 1,
-        "content_type": 7,
-        "object_id": "2",
-        "object_repr": "oscar",
-        "action_flag": 3,
-        "change_message": ""
+        "content_type": 6,
+        "object_id": "1",
+        "object_repr": "Producto object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
     }
 },
 {
     "model": "admin.logentry",
     "pk": 4,
     "fields": {
-        "action_time": "2025-04-01T18:50:21.649",
-        "user": 1,
-        "content_type": 3,
-        "object_id": "2",
-        "object_repr": "vendedores",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 5,
-    "fields": {
-        "action_time": "2025-04-01T18:50:49.009",
+        "action_time": "2025-04-08T10:10:44.711",
         "user": 1,
         "content_type": 7,
         "object_id": "1",
         "object_repr": "admin",
         "action_flag": 2,
         "change_message": "[{\"changed\": {\"fields\": [\"Rol\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 6,
-    "fields": {
-        "action_time": "2025-04-02T09:12:40.720",
-        "user": 1,
-        "content_type": 3,
-        "object_id": "2",
-        "object_repr": "vendedores",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 7,
-    "fields": {
-        "action_time": "2025-04-02T09:13:52.202",
-        "user": 1,
-        "content_type": 3,
-        "object_id": "2",
-        "object_repr": "vendedores",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 8,
-    "fields": {
-        "action_time": "2025-04-02T09:14:11.470",
-        "user": 1,
-        "content_type": 3,
-        "object_id": "2",
-        "object_repr": "vendedores",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 9,
-    "fields": {
-        "action_time": "2025-04-02T09:15:30.762",
-        "user": 1,
-        "content_type": 3,
-        "object_id": "2",
-        "object_repr": "vendedores",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 10,
-    "fields": {
-        "action_time": "2025-04-02T23:14:37.189",
-        "user": 1,
-        "content_type": 6,
-        "object_id": "1",
-        "object_repr": "Producto object (1)",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 11,
-    "fields": {
-        "action_time": "2025-04-02T23:14:50.369",
-        "user": 1,
-        "content_type": 6,
-        "object_id": "1",
-        "object_repr": "Producto object (1)",
-        "action_flag": 2,
-        "change_message": "[]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 12,
-    "fields": {
-        "action_time": "2025-04-02T23:15:14.155",
-        "user": 1,
-        "content_type": 6,
-        "object_id": "2",
-        "object_repr": "Producto object (2)",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 13,
-    "fields": {
-        "action_time": "2025-04-02T23:57:01.320",
-        "user": 1,
-        "content_type": 3,
-        "object_id": "1",
-        "object_repr": "clientes",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 14,
-    "fields": {
-        "action_time": "2025-04-02T23:59:13.532",
-        "user": 1,
-        "content_type": 7,
-        "object_id": "3",
-        "object_repr": "oscar",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 15,
-    "fields": {
-        "action_time": "2025-04-02T23:59:27.760",
-        "user": 1,
-        "content_type": 7,
-        "object_id": "4",
-        "object_repr": "oscarvendedor",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 16,
-    "fields": {
-        "action_time": "2025-04-03T11:09:09.259",
-        "user": 1,
-        "content_type": 3,
-        "object_id": "2",
-        "object_repr": "vendedores",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
     }
 },
 {
@@ -532,16 +376,47 @@
     }
 },
 {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add tienda",
+        "content_type": 10,
+        "codename": "add_tienda"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change tienda",
+        "content_type": 10,
+        "codename": "change_tienda"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete tienda",
+        "content_type": 10,
+        "codename": "delete_tienda"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view tienda",
+        "content_type": 10,
+        "codename": "view_tienda"
+    }
+},
+{
     "model": "auth.group",
     "pk": 1,
     "fields": {
         "name": "clientes",
-        "permissions": [
-            21,
-            22,
-            23,
-            24
-        ]
+        "permissions": []
     }
 },
 {
@@ -549,16 +424,7 @@
     "pk": 2,
     "fields": {
         "name": "vendedores",
-        "permissions": [
-            29,
-            30,
-            31,
-            32,
-            21,
-            22,
-            23,
-            24
-        ]
+        "permissions": []
     }
 },
 {
@@ -634,35 +500,27 @@
     }
 },
 {
-    "model": "sessions.session",
-    "pk": "qola63jtzjfai0udnfuxwas4hjsmcuwm",
+    "model": "contenttypes.contenttype",
+    "pk": 10,
     "fields": {
-        "session_data": "eyJmZWNoYV9pbmljaW8iOiIwMi8wNC8yMDI1IDA5OjE2In0:1tzsKa:6hsCwK10bjDeCbS7h8rsGaBK6vhZV2XTOEiNf53rO4I",
-        "expire_date": "2025-04-16T09:16:12.267"
+        "app_label": "tienda",
+        "model": "tienda"
     }
 },
 {
     "model": "sessions.session",
-    "pk": "w2g893c08l6f44ryom1cb62vn8ko6or9",
+    "pk": "jyrnrfj3o5cbbxqrzqthi5vg7r31lc1i",
     "fields": {
-        "session_data": "eyJmZWNoYV9pbmljaW8iOiIwMi8wNC8yMDI1IDIzOjU5In0:1u067e:TrL5nS305ZyWHY_1UV1dTenU7iSk2Oi-q6LWPdXVrpg",
-        "expire_date": "2025-04-16T23:59:46.694"
-    }
-},
-{
-    "model": "sessions.session",
-    "pk": "yaiapuuk69gfa1p6cwiudvhw33l8f12l",
-    "fields": {
-        "session_data": ".eJxVjTsOwjAQBa-CXCPHG38CKek5g7Ver7EB2VI-FeLuEClN2jejeR-RmDL6UguVJkahdKdM16vengBGdRVn4XFdsl9nnnyJf8Uct4D04rqB-MT6aJJaXaYS5KbInc7y3iK_b7t7CGSc8_ZMHBUhJUbXc7gkBs3AEI0mBqcYwAVwQ7SsITlMoDWlYKK12gYaxPcHv-xB1w:1u0GZi:kCLWQSl5jX97_E_maidghHSm6eej8mwezgAcdHOF-JI",
-        "expire_date": "2025-04-17T11:09:26.374"
+        "session_data": ".eJxVjTsOwyAQBa8SUUd4-WpxmT5nQICXQBKB5E8V5e6JJTdu34zmfVimVIKvraba2cgAB9CDBGku4EZj2JX5sK3FbwvNvk5_RZy3GNKL2g6mZ2iPzlNv61wj3xV-0IXf-0Tv2-GeAiUsZX-2QjkVQs5GChM1AqgQowUAMjpLjVI4lS0JZRCdIZEwg7XkkEAlZN8fXoo_jg:1u23o7:nB21ifRbRWrbL7EMlBNByn5bZD9zh7rNKpqyQyRqTgM",
+        "expire_date": "2025-04-22T09:55:43.485"
     }
 },
 {
     "model": "tienda.usuario",
     "pk": 1,
     "fields": {
-        "password": "pbkdf2_sha256$870000$HOAlXUI2w9dl4baLNFEXsX$y9pqsxMKQZhRiBt1nmCp7RPoehOSXqyNd2kk9jPYV0Y=",
-        "last_login": "2025-04-03T11:08:50.183",
+        "password": "pbkdf2_sha256$870000$a4yVBI6G8QUVEohgBDMr2x$YifNRx8LXAKAuXkLV1iDwMezvV/rEscc6BGycsiSVjw=",
+        "last_login": "2025-04-08T09:55:43",
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
@@ -670,66 +528,10 @@
         "email": "",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2025-04-01T18:43:40",
+        "date_joined": "2025-04-08T09:55:19",
         "rol": 1,
         "groups": [],
         "user_permissions": []
-    }
-},
-{
-    "model": "tienda.usuario",
-    "pk": 3,
-    "fields": {
-        "password": "pbkdf2_sha256$870000$7w56CS2gVnu7oHrG7A2GcM$z+HlWC9KKFMQ0WmMroY56j1XIeQnjBbVGlD0OBllJmU=",
-        "last_login": "2025-04-03T09:36:09.184",
-        "is_superuser": false,
-        "username": "oscar",
-        "first_name": "Oscar",
-        "last_name": "Diaz Romero",
-        "email": "oscar@gmail.com",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2025-04-01T18:48:42",
-        "rol": 2,
-        "groups": [
-            1
-        ],
-        "user_permissions": []
-    }
-},
-{
-    "model": "tienda.usuario",
-    "pk": 4,
-    "fields": {
-        "password": "pbkdf2_sha256$870000$8ZltHzfd41SLirCoB6guEQ$hx7COAPYnuwZVYXNyRmCe07C+PVI7MIt4EjTV4cMobE=",
-        "last_login": "2025-04-03T11:09:26.317",
-        "is_superuser": false,
-        "username": "oscarvendedor",
-        "first_name": "Oscar",
-        "last_name": "Diaz Romero",
-        "email": "oscarvendedor@gmail.com",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2025-04-01T18:49:14",
-        "rol": 3,
-        "groups": [
-            2
-        ],
-        "user_permissions": []
-    }
-},
-{
-    "model": "tienda.cliente",
-    "pk": 1,
-    "fields": {
-        "usuario": 3
-    }
-},
-{
-    "model": "tienda.vendedor",
-    "pk": 1,
-    "fields": {
-        "usuario": 4
     }
 },
 {
@@ -737,35 +539,8 @@
     "pk": 1,
     "fields": {
         "nombre": "Naranja",
-        "precio": 1.0,
-        "tipoFruta": "Acidas"
-    }
-},
-{
-    "model": "tienda.producto",
-    "pk": 2,
-    "fields": {
-        "nombre": "Limon",
-        "precio": 1.0,
-        "tipoFruta": "Acidas"
-    }
-},
-{
-    "model": "tienda.producto",
-    "pk": 3,
-    "fields": {
-        "nombre": "Fresa",
-        "precio": 1.0,
-        "tipoFruta": "Semiacidas"
-    }
-},
-{
-    "model": "tienda.producto",
-    "pk": 4,
-    "fields": {
-        "nombre": "Melocoton",
         "precio": 2.0,
-        "tipoFruta": "Dulces"
+        "tipoFruta": "Acida"
     }
 }
 ]

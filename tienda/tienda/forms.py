@@ -16,6 +16,12 @@ class RegistroForm(UserCreationForm): #Mismo nombre que en views.py
         model = Usuario
         fields = ('username', 'email', 'password1', 'password2', 'rol')
         
+class TiendaModelForm(ModelForm):
+    class Meta:
+        model = Tienda
+        fields = ['nombre','direccion','telefono']
+        
+        
 class ProductoModelForm(ModelForm):
     class Meta:
         model = Producto

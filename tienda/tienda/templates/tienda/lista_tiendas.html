@@ -1,0 +1,11 @@
+{% extends 'estructura/principal.html' %}
+
+{% block contenido %}
+
+        {% for tienda in tiendas_mostrar %}
+        {% include 'tienda/tienda.html' %}
+        {% empty %}
+            <h1>No hay tiendas para mostrar</h1>
+        {% endfor %} 
+
+    {% endblock %}

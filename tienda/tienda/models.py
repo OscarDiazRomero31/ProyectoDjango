@@ -35,3 +35,9 @@ class Producto (models.Model):
     precio = models.FloatField()
     tipoFruta = models.CharField(max_length=100)
     
+class Tienda (models.Model):
+    nombre = models.CharField(max_length=100)
+    direccion = models.CharField(max_length=100)
+    telefono = models.IntegerField(max_length=100)
+    
+    

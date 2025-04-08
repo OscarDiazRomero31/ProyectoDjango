@@ -42,6 +42,10 @@ def crear_productos(request):
         formulario = ProductoModelForm()
     return render(request,'formularioProducto/crear_productos.html',{'crear_productos': formulario})
 
+def lista_tiendas(request):
+    tiendas = Tienda.objects.all()
+    return render(request,'tienda/lista_tiendas.html',{'tiendas_mostrar': tiendas})
+
 def registrar_usuario(request):
     if request.method == 'POST':
         formulario = RegistroForm(request.POST)

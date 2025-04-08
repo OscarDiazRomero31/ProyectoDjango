@@ -24,6 +24,11 @@
           <a class="nav-link" href="{% url 'lista_productos' %}">Ver Productos</a>
           {% endif %}
         </li>
+        <li class="nav-item">
+          {% if perms.tienda.view_tienda%}
+          <a class="nav-link" href="{% url 'lista_tiendas' %}">Ver Tiendas</a>
+          {% endif %}
+        </li>
         <li>
           {% if user.rol == 3 %}
         <a class="btn btn-outline-warning" href="{% url 'crear_productos' %}">

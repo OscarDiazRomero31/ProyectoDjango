@@ -56,19 +56,23 @@ def lista_tiendas(request):
 
 def crear_tiendas(request):
     if request.method == 'POST':
-        crear_tienda = TiendaModelForm(request.POST)
-        if crear_tienda.is_valid():
+        formulario = TiendaModelForm(request.POST)
+        if formulario.is_valid():
             print("Es valido")
-            crear_tienda.save()
+            formulario.save()
             return redirect('lista_tiendas')
         else:
-            crear_tienda = TiendaModelForm()
-        return render(request,)
+            formulario = TiendaModelForm()
+        return render(request, 'formularioTienda/crear_tiendas.html',{'crear_tiendas': formulario})
             
         
 def dame_producto(request,pepito):
     fruta = Producto.objects.get(id=pepito)
-    return render(request, 'fruta/fruta.html',{'producto': fruta})
+    return render(request, 'fruta_detalle/fruta_detalle.html',{'producto': fruta})
+
+def dame_tienda(request,pepito1):
+    tienda = Tienda.objects.get(id=pepito1)
+    return render(request, 'tienda_detalle/tienda_detalle.html',{'tienda': tienda})
 
 
 def editar_producto(request,juanito):
@@ -84,6 +88,20 @@ def editar_producto(request,juanito):
         formulario = ProductoModelForm(instance=producto)
         
     return render(request, 'producto/editar_productos.html',{'editar_producto': formulario , "producto_editar" : producto})
+
+def editar_tienda(request,juanito1):
+    tienda = Tienda.objects.get(id=juanito1)
+    
+    if request.method == "POST":
+        formulario =TiendaModelForm(request.POST, instance=tienda)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request, 'Se ha modificado la tienda')
+            return redirect('dame_tienda', pepito1=tienda.id)
+        else:
+            formulario = TiendaModelForm(instance=tienda)
+            
+        return render(request, 'tienda/editar_tiendas.html', {'editar_tienda': formulario, "tienda_editar": tienda})
 
 
 def registrar_usuario(request):

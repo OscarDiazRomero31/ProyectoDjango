@@ -20,6 +20,11 @@ class TiendaModelForm(ModelForm):
     class Meta:
         model = Tienda
         fields = ['nombre','direccion','telefono']
+        labels = {
+            "nombre": ("Nombre de la Tienda"),
+            "direccion": ("Direccion de la tienda"),
+            "telefono": ("Numero de Telefono")
+        }
         
         
 class ProductoModelForm(ModelForm):

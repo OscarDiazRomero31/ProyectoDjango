@@ -4,10 +4,20 @@
             <strong>Nombre:</strong> {{ tienda.nombre }}
         </li>
         <li class="list-group-item">
-            <strong>Direccion:</strong> {{ tienda.direccion }} €
+            <strong>Direccion:</strong> {{ tienda.direccion }} 
         </li>
         <li class="list-group-item">
             <strong>Telefono:</strong> {{ tienda.telefono }}
         </li>
+        {% load bootstrap_icons %}
+        <div class="row btn-group">
+            <div class="mb-2">
+                <button type="button" 
+                        class="btn btn-outline-primary"> 
+                        <a href="{% url 'editar_tienda' tienda.id %}" ><span>{% bs_icon 'pencil' %}</span></a>
+                </button>
+
+            </div>
+        </div>
     </ul>
 </div>

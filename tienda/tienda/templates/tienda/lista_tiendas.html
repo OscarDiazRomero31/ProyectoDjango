@@ -4,6 +4,8 @@
 
         {% for tienda in tiendas_mostrar %}
         {% include 'tienda/tienda.html' %}
+        <a class="btn btn-outline-primry"
+        href="{% url 'dame_tienda' tienda.id %}">Mas Informacion </a>
         {% empty %}
             <h1>No hay tiendas para mostrar</h1>
         {% endfor %} 

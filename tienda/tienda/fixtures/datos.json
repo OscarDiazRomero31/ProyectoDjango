@@ -52,6 +52,19 @@
     }
 },
 {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2025-04-09T09:15:44.190",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "Tienda object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
     "model": "auth.permission",
     "pk": 1,
     "fields": {
@@ -541,6 +554,15 @@
         "nombre": "Naranja",
         "precio": 2.0,
         "tipoFruta": "Acida"
+    }
+},
+{
+    "model": "tienda.tienda",
+    "pk": 1,
+    "fields": {
+        "nombre": "Fruteria Romero",
+        "direccion": "Calle Barcelo Nº12",
+        "telefono": 655346692
     }
 }
 ]

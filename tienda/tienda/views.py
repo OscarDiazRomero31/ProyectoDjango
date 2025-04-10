@@ -61,9 +61,9 @@ def crear_tiendas(request):
             print("Es valido")
             formulario.save()
             return redirect('lista_tiendas')
-        else:
-            formulario = TiendaModelForm()
-        return render(request, 'formularioTienda/crear_tiendas.html',{'crear_tiendas': formulario})
+    else:
+        formulario = TiendaModelForm()
+    return render(request, 'formularioTienda/crear_tiendas.html',{'crear_tiendas': formulario})
             
         
 def dame_producto(request,pepito):
@@ -98,10 +98,10 @@ def editar_tienda(request,juanito1):
             formulario.save()
             messages.success(request, 'Se ha modificado la tienda')
             return redirect('dame_tienda', pepito1=tienda.id)
-        else:
-            formulario = TiendaModelForm(instance=tienda)
+    else:
+        formulario = TiendaModelForm(instance=tienda)
             
-        return render(request, 'tienda/editar_tiendas.html', {'editar_tienda': formulario, "tienda_editar": tienda})
+    return render(request, 'tienda/editar_tiendas.html', {'editar_tienda': formulario, "tienda_editar": tienda})
 
 
 def registrar_usuario(request):
@@ -127,4 +127,27 @@ def registrar_usuario(request):
         formulario = RegistroForm()
     return render(request, 'registration/signup.html', {'formulario': formulario})
 
+def producto_eliminar(request,producto_id):
+    producto = Producto.objects.get(id=producto_id)
+    try:
+        producto.delete()
+        messages.success(request, "Se ha eliminado el producto")
+    except Exception as error:
+        print (error)
+    return redirect('lista_productos')
+
+def perfil(request,cliente_id):
+    perfil = Cliente.objects.all()
+    return render(request,'perfil/ver_cliente.html',{'ver_cliente': perfil, 'cliente_id': cliente_id})
+
+def crear_cuentaBancaria(request):
+    if request.method == 'POST':
+        formulario = CuentaBancariaModelForm(request.POST)
+        if formulario.is_valid():
+            print("Es valido")
+            formulario.save()
+            return redirect('perfil')
+    else:
+        formulario = CuentaBancariaModelForm()
+    return render(request, 'formularioCuentaBancaria/crear_cuentaBancaria.html',{'crear_cuentaBancaria': formulario})
 

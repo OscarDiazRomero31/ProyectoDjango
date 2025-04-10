@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    {% block titulo %}
-    <title>Mi Tienda Online</title>
-    {% endblock %}
+        {% block titulo %}
+        <title>Mi Tienda Online</title>
+        {% endblock %}
 
-    {% load django_bootstrap5 %}
-    {% bootstrap_css %}
-</head>
-<body>
+        {% load django_bootstrap5 %}
+        {% load static %}
+        {% bootstrap_css %}
+    <script type="text/javascript"
+    src="{% static 'javascript/principal.js' %}"></script>
+    </head>
+    <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         {% include 'estructura/menu.html' %}

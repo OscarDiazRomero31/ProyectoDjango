@@ -13,6 +13,10 @@ urlpatterns = [
     path ('formulario1/', views.crear_tiendas, name= 'crear_tiendas'),
     path ('productos/<int:pepito>/', views.dame_producto, name="dame_producto"),
     path ('productos/<int:juanito>/editar', views.editar_producto, name="editar_producto"),
+    path ('producto/<int:producto_id>', views.producto_eliminar, name="producto_eliminar"),
     path ('tiendas/<int:pepito1>/', views.dame_tienda, name="dame_tienda"),
-    path ('tiendas/<int:juanito1>/editar', views.editar_tienda, name="editar_tienda")
+    path ('tiendas/<int:juanito1>/editar', views.editar_tienda, name="editar_tienda"),
+    path ('perfil/<int:cliente_id>', views.perfil, name='perfil'),
+    path ('formularioCuentaBancaria/,', views.crear_cuentaBancaria, name='crear_cuentaBancaria')
+    
 ]

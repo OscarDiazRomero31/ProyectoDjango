@@ -25,7 +25,16 @@ class TiendaModelForm(ModelForm):
             "direccion": ("Direccion de la tienda"),
             "telefono": ("Numero de Telefono")
         }
-        
+
+class CuentaBancariaModelForm(ModelForm):
+    class Meta:
+        model = CuentaBancaria
+        fields = ['IBAN', 'banco', 'monedas']
+        labels = {
+            "IBAN": ("IBAN"),
+            "banco": ("Nombre del Banco"),
+            "moneda": ("Tipo de Moneda")
+        }
         
 class ProductoModelForm(ModelForm):
     class Meta:

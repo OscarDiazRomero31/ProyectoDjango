@@ -18,6 +18,15 @@
                 </button>
 
             </div>
+            <div class="mb-2">
+                <form action = "{% url 'producto_eliminar' producto.id %}" onclick="return eliminar();" method = "post"> 
+                    {% csrf_token %}
+                    <button class="btn btn-danger" type="submit">
+                        <span>{% bs_icon 'trash' %}</span>
+                    </button> 
+                </form>
+            </div>
         </div>
+
     </ul>
 </div>

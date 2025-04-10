@@ -1,0 +1,19 @@
+<div class="container mt-4">
+    <ul class="list-group">
+        {% if request.user.is_authenticated %}
+        <li class="list-group-item">
+            <strong>IBAN:</strong> {{ cuentaBancaria.IBAN }}
+        </li>
+        <li class="list-group-item">
+            <strong>Banco</strong> {{ cuentaBancaria.banco }} 
+        </li>
+        <li class="list-group-item">
+            <strong>Moneda:</strong> {{ cuentaBancaria.moneda }}
+        </li>
+        {% endif %}
+        {% if not request.user.is_authenticated %}
+        <a class="btn btn-outline-success" href="{% url 'crear_cuentaBancaria' %}" type="submit">
+            Crear Cuenta Bancaria</a>
+        {% endif %}
+    </ul>
+</div>

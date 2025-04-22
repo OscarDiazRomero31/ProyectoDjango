@@ -94,12 +94,13 @@
       </ul>
       <li>
         {% if request.user.is_authenticated %}
-          {% if rol == 2 %}
+          {% if request.user.rol == 2 %}
           <a class="btn btn-outline-warning" href="{% url 'perfil' request.user.cliente.id %}">
             Ver Perfil
           </a>
           {% endif %}
         {% endif %}
+        </li>
     </div>
   </div>
 </nav>

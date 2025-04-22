@@ -40,6 +40,10 @@ class Tienda (models.Model):
     direccion = models.CharField(max_length=100)
     telefono = models.IntegerField()
     
+    vendedor = models.ForeignKey(Vendedor, on_delete=
+                                 models.CASCADE, default=None, null=True)
+    
+    
 class CuentaBancaria (models.Model):
     MONEDAS = [
         {"EUR", "Euros"},

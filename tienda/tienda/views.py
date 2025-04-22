@@ -6,6 +6,7 @@ from django.contrib.auth import login
 from django.contrib.auth.models import Group
 from django.contrib.auth.decorators import permission_required
 from django.contrib import messages
+from django.http import Http404
 
 # Create your views here.
 def index(request):
@@ -15,25 +16,21 @@ def index(request):
         
     return render(request, 'index.html', {})
 
-
 @permission_required('tienda.view_cliente')
 def lista_clientes(request):
     clientes = Cliente.objects.all()
     #clientes = None //nos mostraria en el template el mensaje de no hay clientes.
     return render(request,'cliente/lista_clientes.html', {'clientes_mostrar': clientes})
 
-
 @permission_required('tienda.view_vendedor')
 def lista_vendedores(request):
     vendedores = Vendedor.objects.all()
     return render(request,'vendedor/lista_vendedores.html',{'vendedores_mostrar': vendedores})
 
-
 @permission_required('tienda.view_productos')
 def lista_productos(request):
     productos = Producto.objects.all()
     return render(request,'producto/lista_productos.html',{'productos_mostrar': productos})
-
 
 @permission_required('tienda.add_productos')
 def crear_productos(request):
@@ -48,11 +45,9 @@ def crear_productos(request):
         formulario = ProductoModelForm()
     return render(request,'formularioProducto/crear_productos.html',{'crear_productos': formulario})
 
-
 def lista_tiendas(request):
     tiendas = Tienda.objects.all()
     return render(request,'tienda/lista_tiendas.html',{'tiendas_mostrar': tiendas})
-
 
 def crear_tiendas(request):
     if request.method == 'POST':
@@ -64,8 +59,7 @@ def crear_tiendas(request):
     else:
         formulario = TiendaModelForm()
     return render(request, 'formularioTienda/crear_tiendas.html',{'crear_tiendas': formulario})
-            
-        
+              
 def dame_producto(request,pepito):
     fruta = Producto.objects.get(id=pepito)
     return render(request, 'fruta_detalle/fruta_detalle.html',{'producto': fruta})
@@ -103,7 +97,6 @@ def editar_tienda(request,juanito1):
             
     return render(request, 'tienda/editar_tiendas.html', {'editar_tienda': formulario, "tienda_editar": tienda})
 
-
 def registrar_usuario(request):
     if request.method == 'POST':
         formulario = RegistroForm(request.POST)
@@ -137,7 +130,7 @@ def producto_eliminar(request,producto_id):
     return redirect('lista_productos')
 
 def perfil(request,cliente_id):
-    perfil = Cliente.objects.all()
+    perfil = Cliente.objects.get(id = cliente_id)
     return render(request,'perfil/ver_cliente.html',{'ver_cliente': perfil, 'cliente_id': cliente_id})
 
 def crear_cuentaBancaria(request):
@@ -151,3 +144,8 @@ def crear_cuentaBancaria(request):
         formulario = CuentaBancariaModelForm()
     return render(request, 'formularioCuentaBancaria/crear_cuentaBancaria.html',{'crear_cuentaBancaria': formulario})
 
+def mi_error_404(request,exception=None):
+    return render(request, 'errores/404.html', None, None, 404)
+
+def mi_error_500(request,exception=None):
+    return render(request, 'errores/500.html', None, None, 500)

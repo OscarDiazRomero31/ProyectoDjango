@@ -448,6 +448,42 @@
     }
 },
 {
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add datos vendedor",
+        "content_type": 12,
+        "codename": "add_datosvendedor"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change datos vendedor",
+        "content_type": 12,
+        "codename": "change_datosvendedor"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete datos vendedor",
+        "content_type": 12,
+        "codename": "delete_datosvendedor"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view datos vendedor",
+        "content_type": 12,
+        "codename": "view_datosvendedor"
+    }
+},
+{
     "model": "auth.group",
     "pk": 1,
     "fields": {
@@ -552,6 +588,14 @@
     }
 },
 {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "tienda",
+        "model": "datosvendedor"
+    }
+},
+{
     "model": "sessions.session",
     "pk": "4o76kosl7xoxipmx507ueszggjgfky3i",
     "fields": {
@@ -560,11 +604,19 @@
     }
 },
 {
+    "model": "sessions.session",
+    "pk": "d4g2edd6284f15yattay234x41wya3oe",
+    "fields": {
+        "session_data": "eyJmZWNoYV9pbmljaW8iOiIyNC8wNC8yMDI1IDA4OjEzIn0:1u7pqR:Yco38ylqvgfB1WTLZkhQvpqQcPZeWdCtv-FdOzR7l6I",
+        "expire_date": "2025-05-08T08:13:59.203"
+    }
+},
+{
     "model": "tienda.usuario",
     "pk": 2,
     "fields": {
         "password": "pbkdf2_sha256$870000$4aelT7F1ZUzrqXP0CFHKfr$Th26l7SYi+ziHNEfds1edWPJonJSLZV1D5uaNH1d6zg=",
-        "last_login": "2025-04-22T10:57:36",
+        "last_login": "2025-04-24T08:07:44.488",
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
@@ -576,6 +628,34 @@
         "rol": 1,
         "groups": [],
         "user_permissions": []
+    }
+},
+{
+    "model": "tienda.usuario",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$L1jFchtxMot6qfR81j4HAn$HSvJe3Xsf38DCv2wsq4zExRCkSgvpAfRHqgYsgG5M2s=",
+        "last_login": "2025-04-24T08:10:09.211",
+        "is_superuser": false,
+        "username": "oscar",
+        "first_name": "",
+        "last_name": "",
+        "email": "oscar@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-24T08:10:08.984",
+        "rol": 3,
+        "groups": [
+            2
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tienda.vendedor",
+    "pk": 1,
+    "fields": {
+        "usuario": 3
     }
 }
 ]

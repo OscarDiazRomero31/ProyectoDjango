@@ -64,3 +64,12 @@ class ProductoModelForm(ModelForm):
             self.add_error('nombre', 'Tiene que tener minimo 5 caracteres.')
             
         return self.cleaned_data
+
+class DatosModelForm(ModelForm):
+    class Meta:
+        model = DatosVendedor 
+        fields = ['direccion', 'facturacion', 'vendedor']  
+        help_texts = {
+            'direccion' : ("Direccion del vendedor"),
+            'facturacion': ("Escriba su Facturacion")
+        }        

@@ -61,6 +61,10 @@ class CuentaBancaria (models.Model):
                                    on_delete = models.CASCADE)
     
     
-        
+class DatosVendedor(models.Model):
+  direccion = models.CharField(max_length=50)
+  facturacion = models.CharField(max_length=50)
+
+  vendedor = models.OneToOneField(Vendedor, on_delete=models.CASCADE)      
     
     

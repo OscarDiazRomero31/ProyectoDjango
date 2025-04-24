@@ -42,7 +42,14 @@
           Crear Tiendas
           </a>
           
-          </li>
+        </li>
+        <li>
+          
+          <a class="btn btn-outline-warning" href="{% url 'crear_inventario' %}">
+          Añadir Producto a Tienda
+          </a>
+          
+        </li>
         <li>
           <p>Fecha Inicio: 
             <br>{{ request.session.fecha_inicio }}</br>

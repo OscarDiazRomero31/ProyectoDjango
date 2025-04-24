@@ -235,6 +235,24 @@ def datos_editar(request, id_vendedor):
         
     return render (request, 'vendedor/datos_editar.html', {'formulario' : formulario, 'vendedor' : vendedor })
 
+def crear_inventario(request):
+    if request.method == "POST":
+        formulario = InventarioModelForm(request.POST, request=request)
+        if formulario.is_valid():
+            #print("Es valido")
+            inventario = Inventario.objects.filter(tienda = formulario.cleaned_data.get('tienda'),
+                                                   producto = formulario.cleaned_data.get('producto')).first()
+            if (inventario is None):
+                formulario.save()
+            else:
+                inventario.cantidad += formulario.cleaned_data.get("cantidad")
+                formulario.save()
+            messages.success(request, 'Se ha añadido a la tienda el producto')
+            return redirect('lista_tiendas')
+    else:
+        formulario = InventarioModelForm(None,request=request)
+    return render(request,'formularioInventario/crear_inventario.html',{'crear_inventario': formulario})
+
 def mi_error_404(request,exception=None):
     return render(request, 'errores/404.html', None, None, 404)
 

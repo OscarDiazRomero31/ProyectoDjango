@@ -35,14 +35,23 @@ class Producto (models.Model):
     precio = models.FloatField()
     tipoFruta = models.CharField(max_length=100)
     
+    def __str__(self):
+        return self.nombre
+    
 class Tienda (models.Model):
     nombre = models.CharField(max_length=100)
     direccion = models.CharField(max_length=100)
     telefono = models.IntegerField()
     
+    def __str__(self):
+        return self.nombre
+    
     vendedor = models.ForeignKey(Vendedor, on_delete=
                                  models.CASCADE, default=None, null=True)
     
+    producto = models.ManyToManyField(Producto,
+                                      through='Inventario')
+                                      #related_name='producto'
     
 class CuentaBancaria (models.Model):
     MONEDAS = [
@@ -67,4 +76,7 @@ class DatosVendedor(models.Model):
 
   vendedor = models.OneToOneField(Vendedor, on_delete=models.CASCADE)      
     
-    
+class Inventario(models.Model):
+    tienda =models.ForeignKey(Tienda, on_delete=models.CASCADE)
+    producto =models.ForeignKey(Producto, on_delete=models.CASCADE)
+    cantidad =models.IntegerField()

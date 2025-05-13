@@ -484,6 +484,42 @@
     }
 },
 {
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add inventario",
+        "content_type": 13,
+        "codename": "add_inventario"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change inventario",
+        "content_type": 13,
+        "codename": "change_inventario"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete inventario",
+        "content_type": 13,
+        "codename": "delete_inventario"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view inventario",
+        "content_type": 13,
+        "codename": "view_inventario"
+    }
+},
+{
     "model": "auth.group",
     "pk": 1,
     "fields": {
@@ -596,11 +632,11 @@
     }
 },
 {
-    "model": "sessions.session",
-    "pk": "4o76kosl7xoxipmx507ueszggjgfky3i",
+    "model": "contenttypes.contenttype",
+    "pk": 13,
     "fields": {
-        "session_data": ".eJxVjssOwiAURH_FsDb0cqFCu3TvNxC4gKAGkj5Wxn-3TbrQ7Zwzk3kz69Yl23WOky2BjQzZ-Tfzjp6x7iA8XL03Tq0uU_F8V_hBZ35rIb6uh_s3kN2ct7ZXkJQP6DRKFQ3hMJgUg5dKx0GidGYwgXSf4BK0Fyp5IDCKfBIAm7ONpkjZ2VILlbYfxQ5Uh4D9SYgRBPt8AQWfQNE:1u79VE:Oh6-iX8hHMFnaM9aeI9WNBPZEt8wIqXkzd9SLH71k68",
-        "expire_date": "2025-05-06T11:01:16.729"
+        "app_label": "tienda",
+        "model": "inventario"
     }
 },
 {
@@ -612,11 +648,27 @@
     }
 },
 {
+    "model": "sessions.session",
+    "pk": "kvy3me05vk23neohe467mtroh18zpp5s",
+    "fields": {
+        "session_data": ".eJxVjDsOwyAQBa8SUUcYNvzsMn3OgBZYB5IIJH-qKHePLblx-2bmfdlIMaMvtcTS2MBAdUJ1IEBfpBi0ZFfmcV2yX2eafEmbos5bwPimuoP0wvpsPLa6TCXwXeEHnfmjJfrcD_d0kHHOW22UQQEpGhmAotEOe6slkSRleiQi1MlGusUk5Wh7JwADOOidRQtjCuz3B5ERQT0:1u7sJc:Yj5NPKPb5o6vtCYWp2tkoGzvh7nBR-Ogz8d9lHLLD1w",
+        "expire_date": "2025-05-08T10:52:16.168"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "p9a4pmahy3tre8d0kmg4irtsumipeka9",
+    "fields": {
+        "session_data": ".eJxVzMsOwiAUBNBfMawNvbwEunTvNxC4gKAGkj5Wxn-3TbrpdubMfElOWLyrrWLtZCRMDKAGDlxdwI6KkStxfl2KW-c0uRo3ws9Z8PhObS_iy7dnp9jbMtVAd0KPdqaPHtPnftjTQfFz2dZBQpYhcq-5kMkgt9bkFIOQOlnBhTfWRNQqwy3qwGQOgGAkhswANkN-f4-pQN4:1uEkQQ:xzmgdAQZE-xT0nmJlzWXPqc7iQ6RlwA8uHGoZBBD-nY",
+        "expire_date": "2025-05-27T09:51:42.680"
+    }
+},
+{
     "model": "tienda.usuario",
     "pk": 2,
     "fields": {
         "password": "pbkdf2_sha256$870000$4aelT7F1ZUzrqXP0CFHKfr$Th26l7SYi+ziHNEfds1edWPJonJSLZV1D5uaNH1d6zg=",
-        "last_login": "2025-04-24T08:07:44.488",
+        "last_login": "2025-05-13T09:51:42.621",
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
@@ -652,10 +704,95 @@
     }
 },
 {
+    "model": "tienda.usuario",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$iVrecO4AiehTrbqYoQIKes$TQDOAbkCpfgSbpFbmKrayavJ1wgFlVw9bq39V+mHOVE=",
+        "last_login": "2025-04-24T10:52:16.087",
+        "is_superuser": false,
+        "username": "oscar1",
+        "first_name": "",
+        "last_name": "",
+        "email": "oscar1@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-24T10:52:15.603",
+        "rol": 3,
+        "groups": [
+            2
+        ],
+        "user_permissions": []
+    }
+},
+{
     "model": "tienda.vendedor",
     "pk": 1,
     "fields": {
         "usuario": 3
+    }
+},
+{
+    "model": "tienda.vendedor",
+    "pk": 2,
+    "fields": {
+        "usuario": 4
+    }
+},
+{
+    "model": "tienda.producto",
+    "pk": 1,
+    "fields": {
+        "nombre": "Fresa",
+        "precio": 1.0,
+        "tipoFruta": "Semiacidas"
+    }
+},
+{
+    "model": "tienda.producto",
+    "pk": 2,
+    "fields": {
+        "nombre": "Naranja",
+        "precio": 1.0,
+        "tipoFruta": "Acida"
+    }
+},
+{
+    "model": "tienda.tienda",
+    "pk": 1,
+    "fields": {
+        "nombre": "Fruteria Paca",
+        "direccion": "Calle Barcelo Nº12",
+        "telefono": 1,
+        "vendedor": null
+    }
+},
+{
+    "model": "tienda.tienda",
+    "pk": 2,
+    "fields": {
+        "nombre": "Fruteria Nelson",
+        "direccion": "Calle Barcelo Nº10",
+        "telefono": 2,
+        "vendedor": null
+    }
+},
+{
+    "model": "tienda.tienda",
+    "pk": 3,
+    "fields": {
+        "nombre": "Fruteria 1",
+        "direccion": "Calle Barcelo Nº12",
+        "telefono": 33,
+        "vendedor": null
+    }
+},
+{
+    "model": "tienda.inventario",
+    "pk": 1,
+    "fields": {
+        "tienda": 1,
+        "producto": 1,
+        "cantidad": 100
     }
 }
 ]

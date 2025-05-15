@@ -49,7 +49,13 @@ def crear_tiendas(request):
         formulario = TiendaModelForm(request.POST)
         if formulario.is_valid():
             print("Es valido")
-            formulario.save()
+            tienda = Tienda.objects.create(
+                nombre = formulario.cleaned_data.get("nombre"),
+                direccion = formulario.cleaned_data.get("direccion"),
+                telefono = formulario.cleaned_data.get("telefono"),
+                vendedor = request.user.vendedor
+            )
+            tienda.save()
             return redirect('lista_tiendas')
     else:
         formulario = TiendaModelForm()
@@ -252,6 +258,11 @@ def crear_inventario(request):
     else:
         formulario = InventarioModelForm(None,request=request)
     return render(request,'formularioInventario/crear_inventario.html',{'crear_inventario': formulario})
+
+def lista_productosTienda(request, tienda_id):
+    productos = Inventario.objects.filter(tienda_id=tienda_id)
+
+    return render(request, 'inventario/lista_productos.html', {'productos': productos})
 
 def mi_error_404(request,exception=None):
     return render(request, 'errores/404.html', None, None, 404)

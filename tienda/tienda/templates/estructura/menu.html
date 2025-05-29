@@ -1,118 +1,106 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary px-3">
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'inicio' %}">Tienda</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <!-- Menú principal -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
         </li>
-        <li class="nav-item">
-          {% if perms.tienda.view_cliente%}
-          <a class="nav-link" href="{% url 'lista_clientes' %}">Ver Clientes</a>
-          {% endif %}
-        </li>
-        <li class="nav-item">
-          {% if perms.tienda.view_vendedor%}
-          <a class="nav-link" href="{% url 'lista_vendedores' %}">Ver Vendedores</a>
-          {% endif %}
-        </li>
-        <li class="nav-item">
-          {% if perms.tienda.view_producto%}
-          <a class="nav-link" href="{% url 'lista_productos' %}">Ver Productos</a>
-          {% endif %}
-        </li>
-        <li class="nav-item">
-          {% if perms.tienda.view_tienda%}
-          <a class="nav-link" href="{% url 'lista_tiendas' %}">Ver Tiendas</a>
-          {% endif %}
-        </li>
-        <li>
-          
-        <a class="btn btn-outline-warning" href="{% url 'crear_productos' %}">
-          Crear Productos
-        </a>
-        
-        </li>
-        <li>
-          
-          <a class="btn btn-outline-warning" href="{% url 'crear_tiendas' %}">
-          Crear Tiendas
+
+        <!-- Menú Ver -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="verDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Ver
           </a>
-          
-        </li>
-        <li>
-          
-          <a class="btn btn-outline-warning" href="{% url 'crear_inventario' %}">
-          Añadir Producto a Tienda
-          </a>
-          
-        </li>
-        <li>
-          <p>Fecha Inicio: 
-            <br>{{ request.session.fecha_inicio }}</br>
-          </p>
-          <li>
-            {% if request.user.is_authenticated %}
-            <p>
-              Nombre Usuario: {{ request.user }}
-            </p>
-            <p>
-              {% if request.user.rol == 1 %}
-              Rol: Administrador
-              {% elif request.user.rol == 2 %}
-              Rol: Cliente
-              {% else %}
-              Rol: Vendedor 
-              {% endif %}
-            </p>
+          <ul class="dropdown-menu" aria-labelledby="verDropdown">
+            {% if perms.tienda.view_cliente %}
+            <li><a class="dropdown-item" href="{% url 'lista_clientes' %}">Ver Clientes</a></li>
             {% endif %}
-          </li>  
+            {% if perms.tienda.view_vendedor %}
+            <li><a class="dropdown-item" href="{% url 'lista_vendedores' %}">Ver Vendedores</a></li>
+            {% endif %}
+            {% if perms.tienda.view_producto %}
+            <li><a class="dropdown-item" href="{% url 'lista_productos' %}">Ver Productos</a></li>
+            {% endif %}
+            {% if perms.tienda.view_tienda %}
+            <li><a class="dropdown-item" href="{% url 'lista_tiendas' %}">Ver Tiendas</a></li>
+            {% endif %}
+          </ul>
         </li>
+
+        <!-- Menú Crear -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle btn btn-outline-warning ms-2" href="#" id="crearDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Crear
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="crearDropdown">
+            <li><a class="dropdown-item" href="{% url 'crear_productos' %}">Crear Productos</a></li>
+            <li><a class="dropdown-item" href="{% url 'crear_tiendas' %}">Crear Tiendas</a></li>
+            <li><a class="dropdown-item" href="{% url 'crear_inventario' %}">Añadir Producto a Tienda</a></li>
+          </ul>
+        </li>
+
+        <!-- Info sesión -->
+        <li class="nav-item ms-3">
+          <span class="nav-link">
+            <strong>Fecha Inicio:</strong><br>{{ request.session.fecha_inicio }}
+          </span>
+        </li>
+
+        {% if request.user.is_authenticated %}
+        <li class="nav-item ms-3">
+          <span class="nav-link">
+            <strong>Nombre Usuario:</strong> {{ request.user }}<br>
+            {% if request.user.rol == 1 %}
+            Rol: Administrador
+            {% elif request.user.rol == 2 %}
+            Rol: Cliente
+            {% else %}
+            Rol: Vendedor
+            {% endif %}
+          </span>
+        </li>
+        {% endif %}
       </ul>
-      <form class="d-flex" role="search">
+
+      <!-- Buscador -->
+      <form class="d-flex me-3" role="search">
         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Buscar</button>
       </form>
-      
-      <!-- Lógica para mostrar los enlaces según la autenticación del usuario -->
-      <ul>
-        {% if not request.user.is_authenticated %}
-        <a class="btn btn-outline-warning" href="{% url 'login' %}">
-          Login
-        </a>
-        {% endif %}
 
+      <!-- Botones de sesión -->
+      <div class="d-flex align-items-center gap-2">
         {% if not request.user.is_authenticated %}
-        <a class="btn btn-outline-warning" href="{% url 'registrar_usuario' %}">
-          Registrarse
-        </a>
+        <a class="btn btn-outline-warning" href="{% url 'login' %}">Login</a>
+        <a class="btn btn-outline-warning" href="{% url 'registrar_usuario' %}">Registrarse</a>
         {% endif %}
 
         {% if request.user.is_authenticated %}
-        <form action="{% url 'logout' %}" method="POST">
+        <form action="{% url 'logout' %}" method="POST" class="m-0">
           {% csrf_token %}
-          <button class="btn btn-outline-warning" type="submit">
-            Desconectarse
-          </form>
-          {% endif %}
-      </ul>
-      <li>
-        {% if request.user.is_authenticated %}
-          {% if request.user.rol == 2 %}
-            <a class="btn btn-outline-warning" href="{% url 'detalle_cliente' request.user.cliente.id %}">
-              Ver Perfil
-            </a>
-            {% elif request.user.rol == 3 %}
-            <a class="nav-link"> Rol: Vendedor </a>
-            <a class="btn btn-danger" href= "{% url 'detalle_vendedor' request.user.vendedor.id %}">Ver Datos</a>
-          {% else %}
-            <a class="nav-link"> Rol: Admin </a>
-          {% endif %}
+          <button class="btn btn-outline-warning" type="submit">Desconectarse</button>
+        </form>
+
+        {% if request.user.rol == 2 %}
+        <a class="btn btn-outline-warning" href="{% url 'detalle_cliente' request.user.cliente.id %}">Ver Perfil</a>
+        {% elif request.user.rol == 3 %}
+        <a class="nav-link">Rol: Vendedor</a>
+        <a class="btn btn-danger" href="{% url 'detalle_vendedor' request.user.vendedor.id %}">Ver Datos</a>
+        {% else %}
+        <a class="nav-link">Rol: Admin</a>
         {% endif %}
-      </li>
+        {% endif %}
+      </div>
     </div>
   </div>
 </nav>

@@ -153,7 +153,7 @@ def crear_cuenta(request):
             cuenta = CuentaBancaria.objects.create(
                 IBAN = formulario.cleaned_data.get("IBAN"),
                 banco = formulario.cleaned_data.get("banco"),
-                moneda = formulario.cleaned_data.get("moneda"),
+                monedas = formulario.cleaned_data.get("monedas"),
                 cliente = request.user.cliente,  
             )
             cuenta.save()
@@ -263,6 +263,8 @@ def lista_productosTienda(request, tienda_id):
     productos = Inventario.objects.filter(tienda_id=tienda_id)
 
     return render(request, 'inventario/lista_productos.html', {'productos': productos})
+
+
 
 def mi_error_404(request,exception=None):
     return render(request, 'errores/404.html', None, None, 404)
